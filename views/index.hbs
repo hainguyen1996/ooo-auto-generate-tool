@@ -1,0 +1,70 @@
+{{!-- <h1>{{title}}</h1>
+<p>Welcome to {{title}}</p> --}}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col custom-border-right">
+            <center>
+                <h2>Input</h2>
+            </center>
+            <form>
+                <div class="form-group">
+                    <label for="activityTypeSelectBox">Activity Types</label>
+                    <select class="form-control" id="activityTypeSelectBox">
+                        <option value="N/A">N/A</option>
+                        <option value="Drag the text">Drag the text</option>
+                        <option value="Grammar quiz">Grammar quiz</option>
+                        <option value="Mystery image">Mystery image</option>
+                        <option value="True/False">True/False</option>
+                        <option value="Picture label">Picture label</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputImage">Image</label>
+                    <input type="text" class="form-control" id="inputImage" aria-describedby="inputImageDescription"
+                        placeholder="Enter Image">
+                    <small id="inputImageDescription" class="form-text text-muted">Enter Image Text</small>
+                </div>
+                <div class="form-group">
+                    <label for="inputText">Text</label>
+                    <textarea class="form-control" id="inputText" rows="3"></textarea>
+                </div>
+                <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+            </form>
+            <div class="row container-fluid">
+                <div id="AnswerBox" class="col">
+                    <center>
+                        <h4>Answer</h4>
+                    </center>
+                </div>
+                <div class="col">
+                    <center>
+                        <h4>Options</h4>
+                        <div class="form-group">
+                            <label for="optionsBox">Text</label>
+                            <textarea class="form-control" id="optionsBox" rows="7"></textarea>
+                        </div>
+                    </center>
+                </div>
+            </div>
+            <div class="container-fluid generate-btn-box">
+                <button class="btn btn-primary generate-btn" id="generateBtn">Generate</button>
+            </div>
+        </div>
+        <div class="col">
+            <!-- <center>
+                    <h2>Output</h2>
+                </center> -->
+
+            <div class="container-fluid" id="outputArea">
+
+            </div>
+            <!-- <form>
+                    <div class="form-group">
+                        <label for="outputText">Text</label>
+                        <textarea class="form-control" id="outputText" rows="17"></textarea>
+                    </div>
+                </form> -->
+        </div>
+    </div>
+</div>

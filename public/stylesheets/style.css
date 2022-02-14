@@ -1,0 +1,35 @@
+/* body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+} */
+
+/* body {
+    padding: 10px
+} */
+
+#AnswerBox {
+  border-right-style: groove;
+}
+
+.custom-border-right {
+  border-right-style: groove;
+}
+
+.generate-btn-box {
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.generate-btn {
+  position: relative;
+  float: right;
+}
+
+.custom-font {
+  font-family: "Calibri";
+  font-size: 18.5px;
+}

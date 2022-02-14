@@ -1,0 +1,1 @@
+# ooo-auto-generate-tool

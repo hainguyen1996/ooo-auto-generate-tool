@@ -34,30 +34,30 @@ $("#AnswerBox").on("change", ".answerOption", function () {
 });
 
 $("#generateBtn").click(function () {
-    var activityType = $('#activityTypeSelectBox :selected').val();
-    var instruction = "";
-
-    switch (activityType) {
-        case "Drag the text":
-            instruction = "Read and choose. Drag";
-            break;
-        case "Grammar quiz":
-            instruction = "Look and read. Choose";
-            break;
-        case "Picture label":
-            instruction = "Look and read. Match";
-            break;
-        case "Mystery image":
-            instruction = "Look, read and say.";
-            break;
-        case "True/False":
-            instruction = "Look and read. Click";
-            break;
-        default:
-            instruction = "";
-    }
-
     var outputText = "";
+
+    // var activityType = $('#activityTypeSelectBox :selected').val();
+    var instruction = $('#activityTypeSelectBox :selected').val();
+
+    // switch (activityType) {
+    //     case "Drag the text":
+    //         instruction = "Read and choose. Drag";
+    //         break;
+    //     case "Grammar quiz":
+    //         instruction = "Look and read. Choose";
+    //         break;
+    //     case "Picture label":
+    //         instruction = "Look and read. Match";
+    //         break;
+    //     case "Mystery image":
+    //         instruction = "Look, read and say.";
+    //         break;
+    //     case "True/False":
+    //         instruction = "Look and read. Click";
+    //         break;
+    //     default:
+    //         instruction = "";
+    // }
 
     if (instruction.length > 0) {
         outputText += "<p class='font-weight-bold custom-font'>" + instruction + "</p>";

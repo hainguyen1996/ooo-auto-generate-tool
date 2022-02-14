@@ -1,4 +1,5 @@
-{{!-- <h1>{{title}}</h1>
+{{!--
+<h1>{{title}}</h1>
 <p>Welcome to {{title}}</p> --}}
 
 <div class="container-fluid">
@@ -11,18 +12,21 @@
                 <div class="form-group">
                     <label for="activityTypeSelectBox">Activity Types</label>
                     <select class="form-control" id="activityTypeSelectBox">
-                        <option value="N/A">N/A</option>
-                        <option value="Drag the text">Drag the text</option>
+                        <option value="">N/A</option>
+                        {{!-- {{#each activityTypesMapping}} {{add_activity_types_options}} {{/each}} --}}
+                        {{!-- <option value="Drag the text">Drag the text</option>
                         <option value="Grammar quiz">Grammar quiz</option>
                         <option value="Mystery image">Mystery image</option>
                         <option value="True/False">True/False</option>
-                        <option value="Picture label">Picture label</option>
+                        <option value="Picture label">Picture label</option> --}}
+                        {{#each activityTypesMapping}}
+                            <option value="{{this.Instruction}}">{{this.Acitvity_Types}}</option>
+                        {{/each}}
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="inputImage">Image</label>
-                    <input type="text" class="form-control" id="inputImage" aria-describedby="inputImageDescription"
-                        placeholder="Enter Image">
+                    <input type="text" class="form-control" id="inputImage" aria-describedby="inputImageDescription" placeholder="Enter Image">
                     <small id="inputImageDescription" class="form-text text-muted">Enter Image Text</small>
                 </div>
                 <div class="form-group">
@@ -57,7 +61,7 @@
                 </center> -->
 
             <div class="container-fluid" id="outputArea">
-
+                {{!-- {{activityTypesMapping}} --}}
             </div>
             <!-- <form>
                     <div class="form-group">

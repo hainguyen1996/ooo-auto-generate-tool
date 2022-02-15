@@ -21,7 +21,8 @@ a {
 
 .generate-btn-box {
   margin-bottom: 20px;
-  margin-top: 40px;
+  margin-top: 10px;
+  padding-bottom: 40px;
 }
 
 .generate-btn {

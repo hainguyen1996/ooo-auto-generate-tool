@@ -35,6 +35,7 @@ $("#AnswerBox").on("change", ".answerOption", function () {
 
 $("#generateBtn").click(function () {
     var outputText = "";
+    var outputRaw = "";
 
     // var activityType = $('#activityTypeSelectBox :selected').val();
     var instruction = $('#activityTypeSelectBox :selected').val();
@@ -61,23 +62,27 @@ $("#generateBtn").click(function () {
 
     if (instruction.length > 0) {
         outputText += "<p class='font-weight-bold custom-font'>" + instruction + "</p>";
+        outputRaw += instruction + "\n";
     }
 
     var imageText = $('#inputImage').val();
 
     if (imageText.length > 0) {
         outputText += "<p class='custom-font'>Image: " + imageText + "</p>";
+        outputRaw += "Image: " + imageText + "\n";
     }
 
-    var textInput = $('#inputText').val();
+    var textRawInput = $('#inputText').val();
 
-    textInput = textInput.replace("\n", "<br>")
+    var textInput = textRawInput.replace("\n", "<br>")
 
     if (textInput.length > 0) {
         outputText += "<p class='custom-font'>Text:<br>" + textInput + "</p>";
+        outputRaw += "Text:\n" + textRawInput + "\n";
     }
 
     var optionText = "";
+    var optionRawText = "";
     var optionsRaw = $('#optionsBox').val();
     var optionsRawArr = optionsRaw.split(/\n/);
     var checkBoxValueArr = getAllCheckedCheckBoxValue();
@@ -97,13 +102,33 @@ $("#generateBtn").click(function () {
             else {
                 optionText += optionsRawArr[i] + "<br>"
             }
+            optionRawText += optionsRawArr[i] + "\n";
         }
     }
 
     if (optionText.length > 0) {
         outputText += "<p class='custom-font'>Options:<br>" + optionText + "</p>";
+        outputRaw += "Options:\n" + optionRawText;
     }
 
     $("#outputArea").empty();
     $("#outputArea").append(outputText);
+
+    $("#outputRawText").val(outputRaw);
+});
+
+$("#copyToClipBoardBtn").click(function () {
+    var outputRawBox = $("#outputRawText");
+    outputRawBox.select();
+    navigator.clipboard.writeText(outputRawBox.val());
+    $("#copyAlertArea").empty();
+    $("#copyAlertArea").append("<div id='copyAlert' class=\"alert alert-success alert-dismissible fade show\" role=\"alert\"> \
+                                    Ouput is copied successfully! Alert will disappear after 2s. \
+                                    <button type=\"button\" class= \"close\" data-dismiss=\"alert\" aria-label=\"Close\"> \
+                                        <span aria-hidden=\"true\">&times;</span> \
+                                    </button> \
+                                </div>");
+    setTimeout(function() {
+        $("#copyAlert").alert('close');
+    }, 2000);
 });

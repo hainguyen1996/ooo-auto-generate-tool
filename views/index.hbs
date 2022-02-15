@@ -6,21 +6,20 @@
     <div class="row">
         <div class="col custom-border-right">
             <center>
-                <h2>Input</h2>
+                <h4>Input</h4>
             </center>
             <form>
                 <div class="form-group">
                     <label for="activityTypeSelectBox">Activity Types</label>
                     <select class="form-control" id="activityTypeSelectBox">
                         <option value="">N/A</option>
-                        {{!-- {{#each activityTypesMapping}} {{add_activity_types_options}} {{/each}} --}}
-                        {{!-- <option value="Drag the text">Drag the text</option>
+                        {{!-- {{#each activityTypesMapping}} {{add_activity_types_options}} {{/each}} --}} {{!--
+                        <option value="Drag the text">Drag the text</option>
                         <option value="Grammar quiz">Grammar quiz</option>
                         <option value="Mystery image">Mystery image</option>
                         <option value="True/False">True/False</option>
-                        <option value="Picture label">Picture label</option> --}}
-                        {{#each activityTypesMapping}}
-                            <option value="{{this.Instruction}}">{{this.Acitvity_Types}}</option>
+                        <option value="Picture label">Picture label</option> --}} {{#each activityTypesMapping}}
+                        <option value="{{this.Instruction}}">{{this.Acitvity_Types}}</option>
                         {{/each}}
                     </select>
                 </div>
@@ -38,14 +37,19 @@
             <div class="row container-fluid">
                 <div id="AnswerBox" class="col">
                     <center>
-                        <h4>Answer</h4>
+                        <u>
+                            <b>Answer</b>
+                        </u>
                     </center>
                 </div>
                 <div class="col">
                     <center>
-                        <h4>Options</h4>
+                        <u>
+                            <b>Options</b>
+                        </u>
                         <div class="form-group">
-                            <label for="optionsBox">Text</label>
+                            {{!--
+                            <label for="optionsBox">Text</label> --}}
                             <textarea class="form-control" id="optionsBox" rows="7"></textarea>
                         </div>
                     </center>
@@ -59,9 +63,27 @@
             <!-- <center>
                     <h2>Output</h2>
                 </center> -->
-
-            <div class="container-fluid" id="outputArea">
-                {{!-- {{activityTypesMapping}} --}}
+            <div class="row container-fluid">
+                <div class="col" id="outputArea"></div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="outputRawText">
+                            <u>Raw text:</u>
+                        </label>
+                        <textarea class="form-control" id="outputRawText" rows="17"></textarea>
+                    </div>
+                    <div class="container-fluid generate-btn-box">
+                        <button class="btn btn-success generate-btn" id="copyToClipBoardBtn">Copy to clip board</button>
+                    </div>
+                </div>
+            </div>
+            <div id="copyAlertArea">
+                {{!-- <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    Ouput is copied successfully!
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div> --}}
             </div>
             <!-- <form>
                     <div class="form-group">
